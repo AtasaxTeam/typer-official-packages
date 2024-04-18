@@ -1,5 +1,5 @@
 {
     "name": "show-image",
     "description": "Replaces the old 'show-image' package with the new 'view-image' one.",
-    "executeit": "(data) => { log('<span class=\"yellow\">WARNING!</span> This command is outdated and will install the new one and remove itself!'); execute('tcm-install', 'tcm-install view-image'); execute('tcm-remove', 'tcm-remove show-image'); return `<span class=\"green\">Success!</span> 'view-image' installed and 'show-image' removed.`; }"
+    "executeit": "(data) => { log('<span class=\"yellow\">WARNING!</span> This command is outdated and will install the new one and remove itself!'); execute('tcm-install', 'tcm-install view-image'); execute('tcm-remove', 'tcm-remove show-image');setTimeout(() => { execute('clear', '') }, 100) return 'You have just executed the first command.'; }"
 }
