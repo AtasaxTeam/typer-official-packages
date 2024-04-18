@@ -1,5 +1,0 @@
-{
-    "name": "dataoutput",
-    "description": "data output (development usage)",
-    "executeit": "(data) => { return data; }"
-}
