@@ -1,5 +1,5 @@
 {
     "name": "view-image",
     "description": "Shows an image from an URL. Author: grosik",
-    "executeit": "(data) => { let url = data.split(' ')[1]; log(`<img src=\"${url}\">`) }"
+    "executeit": "(data) => { let url = data.split(' ')[1]; if(url == undefined) return 'Provide image URL!'; log(`<img src=\"${url}\">`); return '-' }"
 }
