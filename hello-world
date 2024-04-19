@@ -1,0 +1,5 @@
+{
+    "name": "helloworld",
+    "description": "A basic test hello world command.",
+    "executeit": "(data) => { return 'Hello world!'; }"
+}
