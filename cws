@@ -1,0 +1,6 @@
+{
+    "name": "cws",
+    "description": "Changes the website to the URL you provide",
+    "author": "grosik",
+    "executeit": "(data) => { location.replace(data.split(' ')[1]);  return '<span class=\"green\">Changing...</span>' }"
+}
