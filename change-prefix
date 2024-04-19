@@ -1,6 +1,6 @@
 {
     "name": "change-prefix",
-    "description": "Changes the command prefix",
+    "description": "Changes the command prefix. Author: grosik",
     "author": "grosik",
     "executeit": "(data) => { prefix = data.replace('change-prefix ', '').replaceAll('|&lt;', '<').replaceAll('|&gt;', '>'); return `<span class=\"green\">Changed the command prefix to <span class=\"blue\">${data.replace('change-prefix ', '').replaceAll('-&lt;', '<').replaceAll('-&gt;', '>')}</span></span>.`; }"
 }
