@@ -1,0 +1,6 @@
+{
+    "name": "discord",
+    "description": "Opens Discord (website).",
+    "author": "grosik",
+    "executeit": "(data) => { setTimeout(() => { let elements = document.getElementsByClassName('discord'); elements[elements.length-1].click()}, 250); return 'Opening <a class=\"blue discord\" href=\"https://discord.com/app\" target=\"_blank\">Discord</a>.'; }"
+}
