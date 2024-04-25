@@ -2,5 +2,5 @@
     "name": "webfetch",
     "description": "provides info about your Typer system",
     "author": "grosik",
-    "executeit": "async (data) => { return `<img src=\"https://grosik.ovh/typer/typer.ico\" style=\"display: inline-block; border: solid #dfcdb4 2px; min-height: 7vw; min-width: 7vw; \"> <div style=\"display: inline-block; margin-left: 0vw; margin-top: 1.5vh; vertical-align:top;\"><span style=\"display: table; vertical-align:top;\">Browser: ${fetch_browser()}</span><span style=\"display: table;\">Packages: ${await fetch_packages()} (TCM)</span><span style=\"display: table;\">Prompt prefix: ${prefix}</span><span style=\"display: table;\">Computer OS: ${fetch_system()}</span></div>` }"
+    "executeit": "async (data) => { return `<img src=\"https://grosik.ovh/typer/typer.ico\" style=\"display: inline-block; border: solid #dfcdb4 2px; min-height: 7vw; min-width: 7vw; border-radius: 22px;\"> <div style=\"display: inline-block; margin-left: 0vw; margin-top: 1.5vh; vertical-align:top;\"><span style=\"display: table; vertical-align:top;\">Browser: ${fetch_browser()}</span><span style=\"display: table;\">Packages: ${await fetch_packages()} (TCM)</span><span style=\"display: table;\">Prompt prefix: ${prefix}</span><span style=\"display: table;\">Computer OS: ${fetch_system()}</span></div>` }"
 }
