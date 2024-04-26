@@ -1,6 +1,5 @@
 {
     "name": "youtube",
-    "description": "Opens YouTube (website).",
-    "author": "grosik",
+    "description": "Opens YouTube (website)",
     "executeit": "(data) => { setTimeout(() => { let elements = document.getElementsByClassName('youtube'); elements[elements.length-1].click()}, 250); return 'Opening <a class=\"red youtube\" href=\"https://youtube.com/\" target=\"_blank\">YouTube</a>.'; }"
 }
