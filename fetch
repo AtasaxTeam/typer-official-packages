@@ -1,0 +1,6 @@
+{
+    "name": "fetch",
+    "description": "Fetch data from URL.",
+    "author": "grosik",
+    "executeit": "async (data) => { let url = data.split(' ')[1]; return await (await fetch(url)).text(); }"
+}
