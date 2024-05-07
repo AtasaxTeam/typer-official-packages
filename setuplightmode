@@ -1,0 +1,6 @@
+{
+    "name": "setuplightmode",
+    "description": "Runs a few commands that makes Typer be lighter. <span class=\"yellow\">Warning!</span> This command will reset your Typer to its defaults",
+    "author": "grosik",
+    "executeit": "async (data) => { await execute('typer-import', 'typer-import https://grosik.ovh/cdn/typer/clearsettings'); let cmd = await execute('clearsettings', ''); log(cmd.replace('revert default settings', 'setup light mode')); if(cmd.includes('rerun')) return ' '; log(await execute('tcm-install', 'tcm-install aliases')); execute('aliases', ''); log('Set aliases'); execute('set', 'set global-cmdwrite false'); log('Turned command remembering off'); localStorage.setItem('typer/asm', 'typer-import https://grosik.ovh/cdn/typer/cursor-off;timeout 1 cursor-off;timeout 2 clear;'); log('Turned cursor blinking off'); setTimeout(() => { execute('restart', '') }, 5000); return 'Everything set. The page will reload in 5 seconds.'; }"
+}
