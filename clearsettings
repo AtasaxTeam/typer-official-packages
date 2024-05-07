@@ -1,0 +1,6 @@
+{
+    "name": "clearsettings",
+    "description": "Clears Typer's settings. Official command.",
+    "author": "Atasax",
+    "executeit": "(data) => { if(!command_data.settingsreset) { command_data.settingsreset = true; return 'This command resets Typer to its defaults, please note that this means you will lose all of your custom settings and installed packages. Consider yourself warned. Please rerun this command to revert default settings.'; }; localStorage.clear(); sessionStorage.clear(); commands = []; cmd_id = 0; setTimeout(() => { execute('restart', 'restart'); }, 5000); return 'The default settings are now applied. The page will reload in 5 seconds.'; }"
+}
