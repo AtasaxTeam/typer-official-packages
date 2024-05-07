@@ -1,6 +1,5 @@
 {
     "name": "fetch",
     "description": "Fetch data from URL.",
-    "author": "grosik",
-    "executeit": "async (data) => { let url = data.split(' ')[1]; return await (await fetch(url)).text(); }"
+    "executeit": "async (data) => { let url = data.split(' ')[1]; let res = (await fetch(url)); let d = res.status != 200 ? `Error ${res.status}` : (res.headers.get('content-type').startsWith('image/') ? `<img src=\"${url}\">` : res.text()); return d; }"
 }
