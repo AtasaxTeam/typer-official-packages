@@ -1,6 +1,6 @@
 {
     "name": "importcss",
-    "description": "Imports CSS from specified URL.",
+    "description": "Imports CSS from specified URL",
     "author": "SABERA 7",
     "executeit": "(data) => { const h=document.createElement('link');h.rel='stylesheet';h.href=`${data.split(' ')[1]}`;document.head.append(h);return 'CSS style imported successfully!'; }"
 }
