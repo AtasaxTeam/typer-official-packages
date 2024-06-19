@@ -1,0 +1,6 @@
+{
+    "name": "cursor-off",
+    "description": "Turns off cursor blinking.",
+    "author": "grosik",
+    "executeit": "(data) => { cursor_stop(); setTimeout(() => { cursor = true; update()}, 150);return ' '; }"
+}
