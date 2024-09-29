@@ -1,5 +1,5 @@
 {
     "name": "aliases",
     "description": "Installs a few of official aliases and removes itself.",
-    "executeit": "(data) => { log('<span class=\"green\">Installing</span> default aliases.'); execute('aliasimport', 'aliasimport tcmls=tcm list;tcmrm=tcm remove;tcmi=tcm install;tcmd=tcm info;echo=say;reload=restart;'); execute('aliasexportlocal', 'aliasexportlocal'); execute('tcm-remove', 'tcm-remove aliases');return '<span class=\"green\">Installed successfully!</span>'; }"
+    "executeit": "(data) => { log('<span class=\"green\">Installing</span> default aliases.'); execute('aliasimport', 'aliasimport tcmls=tcm list;tcmrm=tcm remove;tcmi=tcm install;tcmd=tcm info;echo=say;reload=restart;'); execute('aliasexportlocal', 'aliasexportlocal'); execute('tcm remove', 'tcm remove aliases');return '<span class=\"green\">Installed successfully!</span>'; }"
 }
