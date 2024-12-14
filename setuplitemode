@@ -1,5 +1,5 @@
 {
     "description": "Runs a few commands that makes Typer be lighter. <span class=\"yellow\">Warning!</span> This command will reset your Typer to its defaults",
     "author": "grosik",
-    "url": "https://github.com/AtasaxTeam/typer-official-packages/raw/refs/heads/main/javascript/setuplitemode.js"
+    "url": "https://raw.githubusercontent.com/AtasaxTeam/typer-official-packages/main/javascript/setuplitemode.js"
 }
