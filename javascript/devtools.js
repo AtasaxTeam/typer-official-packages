@@ -1,5 +1,3 @@
-// 1: <b style="margin-top: 0.5vh;display:inline-block;font-size:larger;" class="blue">grosik</b><b class="green" style="font-size:larger;">@</b><b style="font-size:larger;">typer</b>{nl}<div style="display:inline-block"><b class="blue">os</b>{nl}<b class="blue">pkgs</b>{nl}<b class="blue">browser</b></div><div style="display:inline-block;margin-left:1vh">[pcos]{nl}[packages]{nl}[browser]</div>
-// 2: <h2 style="margin-top: 0; margin-bottom: 2px;"><span class="purple">grosik</span><span class="green">@</span>typer</h2><b>[browser]</b> is my browser.{nls}I use <b>[pcos]</b> btw. {nle}
 async (d) => {
     let dt = d.split(' ')
     let d0 = dt[0];
