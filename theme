@@ -1,0 +1,5 @@
+{
+    "description": "Installs a theme from a url",
+    "author": "grosik",
+    "url": "https://raw.githubusercontent.com/AtasaxTeam/typer-official-packages/refs/heads/main/javascript/theme.js"
+}
