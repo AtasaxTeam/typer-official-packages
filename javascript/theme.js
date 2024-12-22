@@ -9,11 +9,12 @@ async (data) => {
         let color = window.getComputedStyle(document.body, null).color;
         list.forEach(e => {
             if(e.id) {
-                string += `<b>${e.url ? `<a href="${e.url}">` : ''}${e.id}${e.url ? '</a>' : ''}</b> <svg style="height: calc(0.55vh + 0.55vw); display: inline; margin: 0; margin-bottom: -0.25vh; fill: ${color}" ${e.dark ? dark : light}\n`
+                string += `${e.url ? `<a href="${e.url}">` : ''}<b${command_data.currenttheme && command_data.currenttheme == e.id ? ' class="green"' : ''}>${e.id}</b>${e.url ? '</a>' : ''} <svg style="height: calc(0.55vh + 0.55vw); display: inline; margin: 0; margin-bottom: -0.25vh; fill: ${command_data.currenttheme && command_data.currenttheme == e.id ? placeholders['{green}'] : color}" ${e.dark ? dark : light}\n`
             } else {
-                string += `<b>${e.url ? `<a href="${e.url}">` : ''}${e.name}/${e.url ? '</a>' : ''}</b>\n`
+                string += `${e.url ? `<a href="${e.url}">` : ''}<b${command_data.currenttheme && command_data.currenttheme.split('/')[0] == e.name ? ' class="green"' : ''}>${e.name}/</b>${e.url ? '</a>' : ''}\n`
                 e.list.forEach(f => {
-                    string += ` - ${f.id} <svg style="height: calc(0.55vh + 0.55vw); display: inline; margin: 0; margin-bottom: -0.25vh; fill: ${color}" ${f.dark ? dark : light}\n`
+                    let q = command_data.currenttheme && command_data.currenttheme.split('/').length > 1 && command_data.currenttheme.split('/')[1] == f.id;
+                    string += `${q ? '<span class="green">' : ''} - ${f.id}${q ? '</span>' : ''} <svg style="height: calc(0.55vh + 0.55vw); display: inline; margin: 0; margin-bottom: -0.25vh; fill: ${q ? placeholders['{green}'] : color}" ${f.dark ? dark : light}\n`
                 })
             }
         })
@@ -26,7 +27,10 @@ async (data) => {
         document.head.append(h);
     }
     let url = data.split(' ')[0]
-    if(!urlregex.test(url)) url = `https://grosik.ovh/cdn/themes/${url}`
+    if(!urlregex.test(url)) {
+        command_data['currenttheme'] = url
+        url = `https://grosik.ovh/cdn/themes/${url}`
+    }
     else if(data.split(' ')[1]) url += data.split(' ')[1]
     let f = (await fetch(url))
     if(f.status !== 200) return `${t('warn')}Code ${f.status}${t('end')}`
