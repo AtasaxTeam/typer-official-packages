@@ -47,11 +47,11 @@ async (data) => {
         if(others.includes(name)) {
             switch(name) {
                 case 'background':
-                    h.innerHTML += `html { background: ${color}; }`
+                    h.innerHTML += `html { background: ${color}; }\n.background { background: ${color}; }`
                     placeholders[`{${name}}`] = color;
                     break;
                 case 'foreground':
-                    h.innerHTML += `html { color: ${color} } a { text-decoration: underline; color: ${color}; }`
+                    h.innerHTML += `html { color: ${color} } a { text-decoration: underline; color: ${color}; }\n.foreground { background: ${color} }`
                     break;
                 case 'cursorcolor':
                     h.innerHTML += `.cursor { text-decoration-color: ${color}; color: ${color}; } #cursor { color: ${color}; }`
