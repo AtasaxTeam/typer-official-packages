@@ -14,7 +14,7 @@ async (data) => {
             } else {
                 string += `${e.url ? `<a href="${e.url}">` : ''}<b${command_data.currenttheme && command_data.currenttheme.split('/')[0] == e.name ? ' class="green"' : ''}>${e.name}/</b>${e.url ? '</a>' : ''}\n`
                 e.list.forEach(f => {
-                    let q = command_data.currenttheme && command_data.currenttheme.split('/').length > 1 && command_data.currenttheme.split('/')[1] == f.id;
+                    let q = command_data.currenttheme && command_data.currenttheme.split('/')[0] == e.name && command_data.currenttheme.split('/').length > 1 && command_data.currenttheme.split('/')[1] == f.id;
                     string += `${q ? '<span class="green">' : ''} - ${f.id}${q ? '</span>' : ''} <svg style="height: ${fontsize}; display: inline; margin: 0; transform: translate(-15%, 15%); fill: ${q ? placeholders['{green}'] : color}" ${f.dark ? dark : light}\n`
                 })
             }
