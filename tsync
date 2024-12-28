@@ -1,7 +1,7 @@
 {
     "description": "Typer sync - Simple data synchronizing tool for Typer",
     "author": "SABERA 7",
-    "url": "https://api.atasax.pl/typer/_packets/f49f8481/beta",
+    "url": "https://api.atasax.pl/typer/_packets/f49f8481/stable",
     "tci": true,
     "required": ["atajsh"]
 }
