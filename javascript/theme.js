@@ -68,7 +68,7 @@ async (data) => {
                     break;
             }
         } else {
-            h.innerHTML += `.${name} { color: ${color}; } .bg-${name} { color: ${color}; }`
+            h.innerHTML += `.${name} { color: ${color}; } .bg-${name} { background-color: ${color}; }`
             placeholders[`{${name}}`] = color;
         }
     })
