@@ -26,10 +26,12 @@ async (data, input, exit) => {
     resv()
     return true
   }
-  for(let i = 0; i<96; i++) {
+  for(let i = 0; i<6; i++) {
+    let stop = false
     await new Promise((rev, rex) => {
-      if(guess(rev)) break
+      if(guess(rev)) stop = true
     })
+    if(stop) break
   }
   log(`Answer:\n<h2>${word}</h2>`)
   exit()
