@@ -21,6 +21,7 @@ async (data, input, exit) => {
   } else log("Got the words from cache")
   log('Guess the word!')
   let word = words[Math.floor(Math.random()*words.length)]
+  log(`1${words[0]}2`)
   log(word)
   async function guess(resv) {
     let g = await input()
