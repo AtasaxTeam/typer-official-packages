@@ -1,10 +1,29 @@
 async (data, input, exit) => {
   cmd = ""
-  let words = command_data["wordle_words"]
+  let words = command_data["wordle_answers"]
+  let proper = command_data["wordle_proper"]
   if(!words) {
-    log('Fetching the words')
+    log('Fetching the answers')
     await new Promise((rev, rex) => {
       fetch("https://sabera.ovh/cdn/wordle.txt")
+    .then(async (r) => {
+      let res = await r.text()
+      if(r.status != 200) {
+        log('<span class="red">Something went wrong when getting the answers</span>')
+        exit()
+        return
+      }
+      words = res.split('\r\n')
+      command_data['wordle_answers'] = words
+
+      log("Got the answers")
+      rev()
+    })})
+  } else log('Got the answers from cache')
+  if(!proper) {
+    log('Fetching the words')
+    await new Promise((rev, rex) => {
+      fetch("https://gist.githubusercontent.com/dracos/dd0668f281e685bad51479e5acaadb93/raw/6bfa15d263d6d5b63840a8e5b64e04b382fdb079/valid-wordle-words.txt")
     .then(async (r) => {
       let res = await r.text()
       if(r.status != 200) {
@@ -12,8 +31,9 @@ async (data, input, exit) => {
         exit()
         return
       }
-      words = res.split('\r\n')
-      command_data['wordle_words'] = words
+      proper = res.split('\r\n')
+      log(proper.length)
+      command_data['wordle_proper'] = proper
 
       log("Got the words")
       rev()
