@@ -21,14 +21,14 @@ async (data, input, exit) => {
   } else log("Got the words from cache")
   log('Guess the word!')
   let word = words[Math.floor(Math.random()*words.length)]
-  log(`1${words[0]}2 ${words[0].length}`)
   log(word)
   async function guess(resv) {
-    let g = await input()
+    let g = (await input()).toLowerCase()
+    log(`!${g}! ${g.length}`)
     if(g.length != 5) {
       log("The word has to be 5 letters long.")
       return guess(resv)
-    } else if(!words.includes(g.toUpperCase())) {
+    } else if(!words.includes(g) {
       log("The word is not in the list.")
       return guess(resv)
     } else {
@@ -39,9 +39,9 @@ async (data, input, exit) => {
         else if(word.includes(g[i])) color = "yellow"
         string += `<span class="${color}">${g[i]}</span>`
       }
-      log(string)
+      log(`<h2>${string.toUpperCase}</h2>`)
       resv()
-      return g.toUpperCase() == word
+      return g.toLowerCase() == word
     }
   }
   for(let i = 0; i<6; i++) {
