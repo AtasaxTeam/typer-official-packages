@@ -1,8 +1,10 @@
 async (data, input, exit) => {
+  cmd = ""
   let words = command_data["wordle_words"]
   if(!words) {
     log('Fetching the words')
-    fetch("https://sabera.ovh/cdn/wordle.txt")
+    await new Promise((rev, rex) => {
+      fetch("https://sabera.ovh/cdn/wordle.txt")
     .then(async (r) => {
       let res = await res.text()
       if(r.status != 200) {
@@ -14,7 +16,8 @@ async (data, input, exit) => {
       command_data['wordle_words'] = words
 
       log("Got the words")
-    })
+      rev()
+    })})
   } else log("Got the words from cache")
   log(words.join(', '))
   exit()
