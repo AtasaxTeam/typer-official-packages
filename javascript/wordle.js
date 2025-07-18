@@ -38,10 +38,10 @@ async (data, input, exit) => {
       rev()
     })})
   } else log("Got the words from cache")
-  log('--- Typer Wordle ---\n')
+  log('<h2>--- Typer Wordle ---</h2>\n')
   let word = words[Math.floor(Math.random()*words.length)]
   async function guess(resv) {
-    let g = (await input('<b>&gt;</b>')).toLowerCase()
+    let g = (await input('<b class="purple">&gt;</b> ')).toLowerCase()
     if(g.length != 5) {
       log("The word has to be 5 letters long.")
       return guess(resv)
