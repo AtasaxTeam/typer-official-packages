@@ -31,7 +31,7 @@ async (data, input, exit) => {
         exit()
         return
       }
-      proper = res.split('\r\n')
+      proper = res.split('\n')
       log(proper.length)
       command_data['wordle_proper'] = proper
 
@@ -41,13 +41,12 @@ async (data, input, exit) => {
   } else log("Got the words from cache")
   log('Guess the word!')
   let word = words[Math.floor(Math.random()*words.length)]
-  log(word)
   async function guess(resv) {
     let g = (await input()).toLowerCase()
     if(g.length != 5) {
       log("The word has to be 5 letters long.")
       return guess(resv)
-    } else if(!words.includes(g)) {
+    } else if(!proper.includes(g)) {
       log("The word is not in the list.")
       return guess(resv)
     } else {
@@ -58,7 +57,7 @@ async (data, input, exit) => {
         else if(word.includes(g[i])) color = "yellow"
         string += `<span class="${color}">${g[i]}</span>`
       }
-      log(`<h2 style="margin:0.1em">${string}</h2>\n${word}`)
+      log(`<h2 style="margin:0.1em">${string}</h2>`)
       resv(g == word)
     }
   }
