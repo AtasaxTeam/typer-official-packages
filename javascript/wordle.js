@@ -6,7 +6,7 @@ async (data, input, exit) => {
     await new Promise((rev, rex) => {
       fetch("https://sabera.ovh/cdn/wordle.txt")
     .then(async (r) => {
-      let res = await res.text()
+      let res = await r.text()
       if(r.status != 200) {
         log('<span class="red">Something went wrong when getting the words</span>')
         exit()
