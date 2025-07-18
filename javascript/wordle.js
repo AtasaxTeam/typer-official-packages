@@ -1,4 +1,4 @@
-async (data, input, exit) {
+async (data, input, exit) => {
   let words = command_data["wordle_words"]
   if(!words) {
     fetch("https://sabera.ovh/cdn/wordle.txt")
