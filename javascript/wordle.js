@@ -36,8 +36,7 @@ async (data, input, exit) => {
         let color = "gray"
         if(g[i] == word[i]) color = "green"
         else if(word.includes(g[i])) color = "yellow"
-        else color = "blue"
-        string += `<span class="${color}">${color}: ${g[i]};</span>`
+        string += `<span class="${color}">${g[i]}</span>`
       }
       log(`<h2 style="margin:0.1em">${string}</h2>\n${word}`)
       resv()
@@ -45,11 +44,8 @@ async (data, input, exit) => {
     }
   }
   for(let i = 0; i<6; i++) {
-    let stop = false
     log(`Guess ${i+1}:`)
-    await new Promise((rev, rex) => {
-      if(guess(rev)) stop = true
-    })
+    let stop = await new Promise((rev, rex) => guess(rev))
     if(stop) break
   }
   log(`Answer:\n<h2>${word}</h2>`)
