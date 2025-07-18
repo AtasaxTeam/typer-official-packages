@@ -39,13 +39,13 @@ async (data, input, exit) => {
         string += `<span class="${color}">${g[i]}</span>`
       }
       log(`<h2 style="margin:0.1em">${string}</h2>\n${word}`)
-      resv()
-      return g == word
+      resv(g == word)
     }
   }
   for(let i = 0; i<6; i++) {
     log(`Guess ${i+1}:`)
     let stop = await new Promise((rev, rex) => guess(rev))
+    log(stop ? 'y' : 'n')
     if(stop) break
   }
   log(`Answer:\n<h2>${word}</h2>`)
