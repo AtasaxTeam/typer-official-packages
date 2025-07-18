@@ -32,17 +32,16 @@ async (data, input, exit) => {
         return
       }
       proper = res.split('\n')
-      log(proper.length)
       command_data['wordle_proper'] = proper
 
       log("Got the words")
       rev()
     })})
   } else log("Got the words from cache")
-  log('Guess the word!')
+  log('--- Typer Wordle ---\n')
   let word = words[Math.floor(Math.random()*words.length)]
   async function guess(resv) {
-    let g = (await input()).toLowerCase()
+    let g = (await input('<b>&gt;</b>')).toLowerCase()
     if(g.length != 5) {
       log("The word has to be 5 letters long.")
       return guess(resv)
@@ -64,9 +63,8 @@ async (data, input, exit) => {
   for(let i = 0; i<6; i++) {
     log(`Guess ${i+1}:`)
     let stop = await new Promise((rev, rex) => guess(rev))
-    log(stop ? 'y' : 'n')
     if(stop) break
+    else if (i == 5) log(`Answer:\n<h2>${word}</h2>`)
   }
-  log(`Answer:\n<h2>${word}</h2>`)
   exit()
 }
