@@ -1,0 +1,6 @@
+{
+    "description": "Wordle for Typer7",
+    "author": "grosik",
+    "url": "https://raw.githubusercontent.com/AtasaxTeam/typer-official-packages/main/javascript/wordle.js",
+    "tci": true
+}
