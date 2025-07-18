@@ -19,6 +19,6 @@ async (data, input, exit) => {
       rev()
     })})
   } else log("Got the words from cache")
-  log(words.join(', '))
+  log(words.join('|'))
   exit()
 }
