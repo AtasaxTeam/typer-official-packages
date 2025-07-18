@@ -12,7 +12,7 @@ async (data, input, exit) => {
         exit()
         return
       }
-      words = res.split('\n')
+      words = res.split('\r\n')
       command_data['wordle_words'] = words
 
       log("Got the words")
@@ -33,6 +33,6 @@ async (data, input, exit) => {
     })
     if(stop) break
   }
-  log(`Answer:\n<h2>${word}</h2>`)
+  log(`Answer:\n<h2>.${word}.</h2>`)
   exit()
 }
