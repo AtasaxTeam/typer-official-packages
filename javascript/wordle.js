@@ -33,9 +33,10 @@ async (data, input, exit) => {
     } else {
       let string = ""
       for(let i = 0; i < 5; i++) {
-        let color = "blur"
+        let color = "gray"
         if(g[i] == word[i]) color = "green"
         else if(word.includes(g[i])) color = "yellow"
+        else color = "blue"
         string += `<span class="${color}">${color}: ${g[i]};</span>`
       }
       log(`<h2 style="margin:0.1em">${string}</h2>\n${word}`)
