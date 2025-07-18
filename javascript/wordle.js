@@ -38,7 +38,7 @@ async (data, input, exit) => {
         else if(word.includes(g[i])) color = "yellow"
         string += `<span class="${color}">${color}: ${g[i]};</span>`
       }
-      log(`<h2>${string}</h2>\n${word}`)
+      log(`<h2 style="margin:0.1em">${string}</h2>\n${word}`)
       resv()
       return g == word
     }
