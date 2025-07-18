@@ -46,7 +46,7 @@ async (data, input, exit) => {
   }
   for(let i = 0; i<6; i++) {
     let stop = false
-    log(`Guess ${i}:`)
+    log(`Guess ${i+1}:`)
     await new Promise((rev, rex) => {
       if(guess(rev)) stop = true
     })
