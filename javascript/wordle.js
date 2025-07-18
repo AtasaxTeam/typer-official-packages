@@ -12,14 +12,14 @@ async (data, input, exit) => {
         exit()
         return
       }
-      words = res.split(' \n')
+      words = res.split('\n')
       command_data['wordle_words'] = words
 
       log("Got the words")
       rev()
     })})
   } else log("Got the words from cache")
-  log(words.join(', '))
+  log(words.join(';'))
   let word = words[Math.floor(Math.random()*words.length)]
   async function guess(resv) {
     let g = await input()
