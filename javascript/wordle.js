@@ -24,7 +24,6 @@ async (data, input, exit) => {
   log(word)
   async function guess(resv) {
     let g = (await input()).toLowerCase()
-    log(`!${g}! ${g.length}`)
     if(g.length != 5) {
       log("The word has to be 5 letters long.")
       return guess(resv)
@@ -34,14 +33,14 @@ async (data, input, exit) => {
     } else {
       let string = ""
       for(let i = 0; i < 5; i++) {
-        let color = "gray"
+        let color = "blur"
         if(g[i] == word[i]) color = "green"
         else if(word.includes(g[i])) color = "yellow"
-        string += `<span class="${color}">${g[i]}</span>`
+        string += `<span class="${color}">${color}: ${g[i]};</span>`
       }
-      log(`<h2>${string.toUpperCase()}</h2>`)
+      log(`<h2>${string}</h2>\n${word}`)
       resv()
-      return g.toLowerCase() == word
+      return g == word
     }
   }
   for(let i = 0; i<6; i++) {
