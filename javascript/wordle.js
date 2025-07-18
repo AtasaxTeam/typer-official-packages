@@ -28,7 +28,7 @@ async (data, input, exit) => {
     if(g.length != 5) {
       log("The word has to be 5 letters long.")
       return guess(resv)
-    } else if(!words.includes(g) {
+    } else if(!words.includes(g)) {
       log("The word is not in the list.")
       return guess(resv)
     } else {
@@ -39,7 +39,7 @@ async (data, input, exit) => {
         else if(word.includes(g[i])) color = "yellow"
         string += `<span class="${color}">${g[i]}</span>`
       }
-      log(`<h2>${string.toUpperCase}</h2>`)
+      log(`<h2>${string.toUpperCase()}</h2>`)
       resv()
       return g.toLowerCase() == word
     }
