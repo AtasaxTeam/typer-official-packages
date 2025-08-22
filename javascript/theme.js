@@ -69,7 +69,7 @@ async (data) => {
                 case 'font':
                     const tmp = color.split('/')
                     const font = tmp[tmp.length-1].replaceAll('-','').replaceAll('.ttf','').replaceAll('.','')
-                    h.innerHTML += `@font-face { font-family: ${font}; src: url('${color}'); } html { font-family: ${font}; }`
+                    h.innerHTML += `@font-face { font-family: ${font}; src: url('${color}'); } html { font-family: ${font}, 'M PLUS Rounded 1c', NotoNerd, sans-serif; }`
                     break;
             }
         } else if (name.length > 1) {
