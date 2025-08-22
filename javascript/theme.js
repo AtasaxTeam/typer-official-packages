@@ -38,7 +38,7 @@ async (data) => {
 
     let d = (await f.text()).split('\n')
 
-    let others = ['background', 'foreground', 'cursorcolor', 'cursorchar', 'disablecursorblink', 'link']
+    let others = ['background', 'foreground', 'cursorcolor', 'cursorchar', 'disablecursorblink', 'link', 'font', '']
 
     d.forEach(l => {
         let name = l.split(' ')[0]
