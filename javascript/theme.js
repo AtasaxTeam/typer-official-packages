@@ -66,6 +66,10 @@ async (data) => {
                 case 'link':
                     h.innerHTML += `a:hover { text-decoration-color: ${color}; }`
                     break;
+                case 'font':
+                    const tmp = color.split('/')
+                    h.innerHTML += `@font-face { font-family: ${tmp[tmp.length-1]}; src: url(${color}); } html { font-family: ${tmp[tmp.length-1]}; }`
+                    break;
             }
         } else {
             h.innerHTML += `.${name} { color: ${color}; } .bg-${name} { background-color: ${color}; }`
