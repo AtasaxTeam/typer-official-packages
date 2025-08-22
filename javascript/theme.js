@@ -71,7 +71,7 @@ async (data) => {
                     h.innerHTML += `@font-face { font-family: ${tmp[tmp.length-1]}; src: url(${color}); } html { font-family: ${tmp[tmp.length-1]}; }`
                     break;
             }
-        } else {
+        } else if (name.length > 1) {
             h.innerHTML += `.${name} { color: ${color}; } .bg-${name} { background-color: ${color}; }`
             placeholders[`{${name}}`] = color;
         }
