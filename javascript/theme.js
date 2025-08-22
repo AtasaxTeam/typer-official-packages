@@ -68,7 +68,8 @@ async (data) => {
                     break;
                 case 'font':
                     const tmp = color.split('/')
-                    h.innerHTML += `@font-face { font-family: ${tmp[tmp.length-1]}; src: url(${color}); } html { font-family: ${tmp[tmp.length-1]}; }`
+                    const font = tmp[tmp.length-1].replaceAll('-','').replaceAll('.ttf','').replaceAll('.','')
+                    h.innerHTML += `@font-face { font-family: ${font}; src: url('${color}'); } html { font-family: ${font}; }`
                     break;
             }
         } else if (name.length > 1) {
