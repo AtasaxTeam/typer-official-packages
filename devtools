@@ -1,5 +1,6 @@
 {
 	"description": "A bunch of tools suitable for developers",
 	"author": "grosik",
+	"subcommands": ["help", "fetch", "lines", "color", "allcolors", "website"],
 	"url": "https://raw.githubusercontent.com/AtasaxTeam/typer-official-packages/main/javascript/devtools.js"
 }
