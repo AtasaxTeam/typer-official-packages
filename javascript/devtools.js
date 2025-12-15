@@ -37,7 +37,7 @@ async (d) => {
             'color': { text: 'displays a color from hex', aliases: ['c'] },
             'allcolors': { text: 'displays the whole Typer color palette', aliases: ['colors', 'palette', 'ac'] },
             'website': { text: 'goes to another url', aliases: ['ws','cw'] }
-        }}`
+        })}`
       case 'c':
       case 'color':
         return `<div style="background: ${d1}; width: 5em; height: 5em; border-radius: 2em;"></div>`
