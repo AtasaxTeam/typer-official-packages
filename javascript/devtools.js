@@ -19,7 +19,7 @@ async (d) => {
         return rs.status != 200 ? `error ${rs.status}` : `<b class="purple">${ln}</b> ${ln == 1 ? 'line' : 'lines'}`
       case 'h':
       case 'help':
-        return `<b style="display: block;"><span class="purple">devtools</span> by <span class="blue">grosik</span></b><div style="display: inline-block; margin-right: 3vw;">help - displays this menu           
+        /*return `<b style="display: block;"><span class="purple">devtools</span> by <span class="blue">grosik</span></b><div style="display: inline-block; margin-right: 3vw;">help - displays this menu           
           fetch - gets data from a url
           lines - counts lines from url
           color - displays a color from hex
@@ -30,14 +30,24 @@ async (d) => {
           [aliases: ln]
           [aliases: c]
           [aliases: ac]
-          [aliases: ws]</div>`
+          [aliases: ws]</div>`*/
+        return `<b style="display: block; font-size: 1.1em; margin: .1em 0;"><span class="purple">devtools</span> by <span class="blue">grosik</span></b>${typerDesign.help.menu('devtools',{
+            'fetch': { text: 'gets data from a url', aliases: ['f'] },
+            'lines': { text: 'counts lines from a url', aliases: ['ln'] },
+            'color': { text: 'displays a color from hex', aliases: ['c'] },
+            'allcolors': { text: 'displays the whole Typer color palette', aliases: ['colors', 'palette', 'ac'] },
+            'website': { text: 'goes to another url', aliases: ['ws','cw'] }
+        }}`
       case 'c':
       case 'color':
         return `<div style="background: ${d1}; width: 5em; height: 5em; border-radius: 2em;"></div>`
       case 'ac':
+      case 'colors':
+      case 'palette':
       case 'allcolors':
         return `<div style="background: ${placeholders['{black}']}; width: 1em; height: 1em; border-radius: 2em; display: inline-block; margin-right: 0.5em;"></div><div style="background: ${placeholders['{gray}']}; width: 1em; height: 1em; border-radius: 2em; display: inline-block; margin-right: 0.5em;"></div><div style="background: ${placeholders['{red}']}; width: 1em; height: 1em; border-radius: 2em; display: inline-block; margin-right: 0.5em;"></div><div style="background: ${placeholders['{green}']}; width: 1em; height: 1em; border-radius: 2em; display: inline-block; margin-right: 0.5em;"></div><div style="background: ${placeholders['{yellow}']}; width: 1em; height: 1em; border-radius: 2em; display: inline-block; margin-right: 0.5em;"></div><div style="background: ${placeholders['{blue}']}; width: 1em; height: 1em; border-radius: 2em; display: inline-block; margin-right: 0.5em;"></div><div style="background: ${placeholders['{pink}']}; width: 1em; height: 1em; border-radius: 2em; display: inline-block; margin-right: 0.5em;"></div><div style="background: ${placeholders['{purple}']}; width: 1em; height: 1em; border-radius: 2em; display: inline-block; margin-right: 0.5em;"></div><div style="background: ${placeholders['{aqua}']}; width: 1em; height: 1em; border-radius: 2em; display: inline-block; margin-right: 0.5em;"></div><div style="background: ${placeholders['{white}']}; width: 1em; height: 1em; border-radius: 2em; display: inline-block;"></div>`
       case 'ws':
+      case 'cw':
       case 'website':
         location.replace(d1);
         return '<span class=\"green\">Going to </span><span class="purple">${d1}</span>' 
