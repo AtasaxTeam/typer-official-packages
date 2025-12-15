@@ -1,5 +1,5 @@
 async (data) => {
-  let sbcmd = data.split(' ')[1];
+  let sbcmd = data.split(' ')[0];
   let as = await localStorage.getItem('typer/preasm') ? await localStorage.getItem('typer/preasm') : '';
   let cmd = data.length > 7 ? data.replace(`preasm ${sbcmd} `, '') : '';
   switch(sbcmd) {
