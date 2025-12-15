@@ -31,13 +31,14 @@ async (d) => {
           [aliases: c]
           [aliases: ac]
           [aliases: ws]</div>`*/
-        return `<b style="display: block; font-size: 1.1em; margin: .1em 0;"><span class="purple">devtools</span> by <span class="blue">grosik</span></b>${typerDesign.help.menu('devtools',{
+        const subs = {
             'fetch': { text: 'gets data from a url', aliases: ['f'] },
             'lines': { text: 'counts lines from a url', aliases: ['ln'] },
             'color': { text: 'displays a color from hex', aliases: ['c'] },
             'allcolors': { text: 'displays the whole Typer color palette', aliases: ['colors', 'palette', 'ac'] },
             'website': { text: 'goes to another url', aliases: ['ws','cw'] }
-        })}`
+        }
+        return `<b style="display: block; font-size: 1.1em; margin: .1em 0;"><span class="purple">devtools</span> by <span class="blue">grosik</span></b>${typerDesign.help.menu('devtools',subs)}`
       case 'c':
       case 'color':
         return `<div style="background: ${d1}; width: 5em; height: 5em; border-radius: 2em;"></div>`
