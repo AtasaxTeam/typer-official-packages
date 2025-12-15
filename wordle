@@ -1,5 +1,5 @@
 {
-    "description": "Wordle for Typer7",
+    "description": "(Unlimited) Wordle for Typer",
     "author": "grosik",
     "url": "https://raw.githubusercontent.com/AtasaxTeam/typer-official-packages/main/javascript/wordle.js",
     "tci": true
