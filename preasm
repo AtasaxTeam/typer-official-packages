@@ -2,5 +2,6 @@
     "name": "preasm",
     "description": "PreAutoStart Manager - allows you to manage the preasm you like you can manage the normal autostart in Typer",
     "author": "grosik",
-    "executeit": "async (data) => { let sbcmd = data.split(' ')[1]; let as = await localStorage.getItem('typer/preasm') ? await localStorage.getItem('typer/preasm') : ''; let cmd = data.length > 7 ? data.replace(`preasm ${sbcmd} `, '') : '';switch(sbcmd) {case 'add': if(cmd=='') return 'You need to provide a command!';localStorage.setItem('typer/preasm', `${as}${cmd};`);return `Added ${cmd} to pre autostart`;case 'ls': case 'list': return (await localStorage.getItem('typer/preasm') ? await localStorage.getItem('typer/preasm').split(';').join('\\n').replaceAll('<', ';') : 'No commands found');case 'rm': case 'remove':if(cmd=='') return 'You need to provide a command!';if(as == '') return 'No commands in autostart';as = as.replaceAll(`${cmd};`, '');localStorage.setItem('typer/preasm', as);return `Removed every instance of ${cmd} in autostart`;default: return sbcmd == undefined ? `No subcommand provided!\nSubcommands: 'add', 'list' (or 'ls'), 'remove' (or 'rm').` : `Unknown subcommand: <b class=\"blue\">${sbcmd}</b>!\nSubcommands: 'add', 'list' (or 'ls'), 'remove' (or 'rm').`}}"
+    "url": "https://raw.githubusercontent.com/AtasaxTeam/typer-official-packages/main/javascript/preasm.js",
+    "subcommands": ["help","add","list","remove"]    
 }
