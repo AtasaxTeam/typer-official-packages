@@ -2,6 +2,6 @@
     "name": "preasm",
     "description": "PreAutoStart Manager - allows you to manage the preasm you like you can manage the normal autostart in Typer",
     "author": "grosik",
-    "url": "https://raw.githubusercontent.com/AtasaxTeam/typer-official-packages/main/javascript/preasm.js",
+    "url": "https://grosik.dev/cdn/typer/javascript/preasm.js",
     "subcommands": ["help","add","list","remove"]    
 }
